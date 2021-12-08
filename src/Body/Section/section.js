@@ -1,0 +1,40 @@
+import style from "./section.module.scss";
+
+const Section = () => {
+  return (
+    <section className={style.section}>
+      <div className={style.off}>
+        <h1>تخفیف %10</h1>
+        <h2>همه رستوران ها، همه غذاها</h2>
+        <h3>!زمونه عوض شده</h3>
+      </div>
+      <div className={style.order}>
+        <h1>سفارش آنلاین غذا از رستوران های تهران</h1>
+        <p>
+          .ریحون سرویس سفارش آنلاین غذاست. با ریحون میتونید هر جایی که هستید،
+          رستوران های اطرافتون رو ببینید و غذای مورد علاقتون رو آنلاین سفارش
+          بدید
+        </p>
+      </div>
+      <div className={style.orderWays}>
+        <main className={style.orderWay}>
+          <i className="fa fa-credit-card"></i>
+          <h1>به صورت آنلاین پرداخت کنید</h1>
+          <p>یک متن شانسی در این مکان نوشته شده است و نباید جدی گرفته شود</p>
+        </main>
+        <main className={style.orderWay}>
+          <i className="fa fa-credit-card"></i>
+          <h1>رستوران و غذای مورد نظرتان را انتخاب کنید</h1>
+          <p>یک متن شانسی در این مکان نوشته شده است و نباید جدی گرفته شود</p>
+        </main>
+        <main className={style.orderWay}>
+          <i className="fa fa-map-marker"></i>
+          <h1>نام منطقه خود را انتخاب کنید</h1>
+          <p>یک متن شانسی در این مکان نوشته شده است و نباید جدی گرفته شود</p>
+        </main>
+      </div>
+    </section>
+  );
+};
+
+export default Section;

@@ -1,0 +1,17 @@
+.dropdown {
+    width: 100%;
+    height: 30px;
+    display: flex;
+
+    i {
+        margin: auto;
+        font-weight: bold;
+        color: gray;
+        transition: all 0.5s;
+
+        &:hover {
+            cursor: pointer;
+            color: rgb(27, 27, 27);
+        }
+    }
+}

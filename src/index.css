@@ -5,9 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a{
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: myFont;
+  src: url("./Fonts/BMitra.ttf");
+}
+
+@font-face {
+  font-family: uniqueFont;
+  src: url("./Fonts/BFantezy.ttf");
 }
