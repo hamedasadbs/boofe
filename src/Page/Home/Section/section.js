@@ -1,4 +1,7 @@
 import style from "./section.module.scss";
+import cart from "../../../Images/cart.png";
+import food from "../../../Images/food.png";
+import map from "../../../Images/map.png";
 
 const Section = () => {
   return (
@@ -18,17 +21,20 @@ const Section = () => {
       </div>
       <div className={style.orderWays}>
         <main className={style.orderWay}>
-          <i className="fa fa-credit-card"></i>
+          <img src={cart} alt="cart" />
+          <div className={style.shape}></div>
           <h1>به صورت آنلاین پرداخت کنید</h1>
           <p>یک متن شانسی در این مکان نوشته شده است و نباید جدی گرفته شود</p>
         </main>
         <main className={style.orderWay}>
-          <i className="fa fa-credit-card"></i>
+          <img src={food} alt="food" />
+          <div className={style.shape}></div>
           <h1>رستوران و غذای مورد نظرتان را انتخاب کنید</h1>
           <p>یک متن شانسی در این مکان نوشته شده است و نباید جدی گرفته شود</p>
         </main>
         <main className={style.orderWay}>
-          <i className="fa fa-map-marker"></i>
+          <img src={map} alt="map" />
+          <div className={style.shape}></div>
           <h1>نام منطقه خود را انتخاب کنید</h1>
           <p>یک متن شانسی در این مکان نوشته شده است و نباید جدی گرفته شود</p>
         </main>

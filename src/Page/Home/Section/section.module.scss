@@ -52,24 +52,24 @@
             font-family: myFont;
             font-size: 18px;
             margin-top: 0px;
+            font-weight: bold;
         }
     }
 
     .orderWays {
         display: flex;
         width: auto;
-        margin: 20px auto;
+        margin: 30px auto;
 
         .orderWay {
             display: flex;
             flex-direction: column;
             width: 250px;
-            margin: auto 20px;
+            margin: auto 40px;
             transition: all 0.5s;
 
-            i {
-                font-size: 50px;
-                color: purple;
+            img {
+                width: 80px;
                 margin: auto;
             }
 
@@ -87,18 +87,50 @@
                 font-family: myFont;
                 font-size: 15px;
                 margin-top: 0px;
+                font-weight: bold;
+            }
+
+            .shape {
+                position: relative;
+                text-align: center;
+                padding: 5px;
+                margin: 15px auto;
+                height: 0px;
+                width: 200px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 49%;
+                    background-image: linear-gradient(to left, rgb(255, 3, 255), rgb(99, 1, 99));
+                    transform: skew(0deg, 16deg);
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: 50%;
+                    background-image: linear-gradient(to right, rgb(255, 3, 255), rgb(99, 1, 99));
+                    transform: skew(0deg, -16deg);
+                }
             }
         }
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     .section {
         .orderWays {
             flex-direction: column;
-            
-            .orderWay{
-                margin-top: 10px;
+
+            .orderWay {
+                margin-top: 20px;
             }
         }
     }
