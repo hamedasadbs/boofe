@@ -2,18 +2,20 @@ import { useState } from "react";
 
 import style from "./tab.module.scss";
 
-const Tab = () => {
+const Tab = (props) => {
   const [login, setLogin] = useState(true);
   const [signup, setSignup] = useState(false);
 
   function loginHandler() {
     setLogin(true);
     setSignup(false);
+    props.activeTab("login");
   }
 
   function signupHandler() {
     setLogin(false);
     setSignup(true);
+    props.activeTab("signup");
   }
 
   return (

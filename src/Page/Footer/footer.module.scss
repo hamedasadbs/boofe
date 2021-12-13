@@ -1,0 +1,70 @@
+.footer {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+    .icons,
+    .shortcuts {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        i {
+            font-size: 30px;
+            color: gray;
+            margin: 20px;
+            transition: all 0.3s;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .facebook {
+            &:hover {
+                color: blue;
+            }
+        }
+
+        .twitter {
+            &:hover {
+                color: rgb(0, 174, 255);
+            }
+        }
+
+        .linkedin {
+            &:hover {
+                color: rgb(0, 143, 209);
+            }
+        }
+
+        .pinterest {
+            &:hover {
+                color: rgb(209, 0, 10);
+            }
+        }
+
+        .instagram {
+            &:hover {
+                background: -webkit-gradient(linear, left bottom, right top, from(rgb(251, 255, 0)), to(rgb(250, 3, 65)));
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        h1 {
+            font-family: myFont;
+            font-size: 25px;
+            color: rgb(173, 173, 173);
+            margin: 0px 40px 20px 40px;
+            transition: all 0.3s;
+
+            &:hover {
+                color: #daa000;
+                cursor: pointer;
+            }
+        }
+    }
+}
