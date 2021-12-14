@@ -6,9 +6,10 @@
 
     .icons,
     .shortcuts {
-        width: 100%;
+        width: auto;
         display: flex;
         justify-content: center;
+        margin: auto;
         margin-top: 20px;
 
         i {
@@ -64,6 +65,28 @@
             &:hover {
                 color: #daa000;
                 cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .footer {
+        .shortcuts {
+            h1 {
+                font-size: 20px;
+                margin: 0px 20px 20px 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .footer {
+        .shortcuts {
+            h1 {
+                font-size: 15px;
+                margin: 0px 20px 20px 20px;
             }
         }
     }

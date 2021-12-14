@@ -1,0 +1,18 @@
+.notFound {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+
+    img {
+        width: 60%;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin: auto;
+        color: gray;
+        font-weight: bold;
+        font-family: specialFont;
+    }
+}

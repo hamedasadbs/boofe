@@ -3,15 +3,18 @@
     height: 30px;
     display: flex;
 
-    i {
+    a {
         margin: auto;
-        font-weight: bold;
-        color: gray;
-        transition: all 0.5s;
 
-        &:hover {
-            cursor: pointer;
-            color: rgb(27, 27, 27);
+        i {
+            font-weight: bold;
+            color: gray;
+            transition: all 0.5s;
+
+            &:hover {
+                cursor: pointer;
+                color: rgb(27, 27, 27);
+            }
         }
     }
 }

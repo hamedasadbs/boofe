@@ -25,7 +25,7 @@ const Header = () => {
         <i className="fa fa-user"></i>
       </div>
       <div className={style.logo}>
-        <a href="/">
+        <a href="/home">
           <img src={logo} alt="logo" />
           <h1>بوفه</h1>
         </a>
@@ -51,7 +51,7 @@ const Header = () => {
         </div>
         <div className={style.search}>
           <button>
-            جست و جو<i class="fa fa-search"></i>
+            جست و جو<i className="fa fa-search"></i>
           </button>
           <input type="text" placeholder="دنبال چی ای؟" />
         </div>

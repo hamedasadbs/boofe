@@ -4,6 +4,10 @@
     display: flex;
     flex-direction: column;
     background-image: url(../../Images/header_background_image.png);
+    background-repeat: no-repeat;
+    background-position-x: -165px;
+    background-position-y: -450px;
+
 
     .account {
         background-color: rgba(255, 255, 255, 0.2);
@@ -14,7 +18,7 @@
         box-shadow: inset 0 0 10px gray;
 
         h1 {
-            font-family: myFont;
+            font-family: specialFont;
             font-size: 18px;
             color: white;
         }
