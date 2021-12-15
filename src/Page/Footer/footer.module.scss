@@ -91,3 +91,13 @@
         }
     }
 }
+
+@media only screen and (max-width: 350px) {
+    .footer {
+
+        .icons,
+        .shortcuts {
+            flex-wrap: wrap;
+        }
+    }
+}

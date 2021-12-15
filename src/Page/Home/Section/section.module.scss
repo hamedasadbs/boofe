@@ -135,3 +135,22 @@
         }
     }
 }
+
+@media only screen and (max-width: 350px) {
+    .section {
+        .orderWays {
+
+            .orderWay {
+                margin: 10px auto;
+
+                img {
+                    width: 40px;
+                }
+
+                .shape {
+                    width: 100px;
+                }
+            }
+        }
+    }
+}

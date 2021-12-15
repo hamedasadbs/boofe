@@ -52,3 +52,47 @@
         }
     }
 }
+
+@media only screen and (max-width: 800px) {
+    .qas {
+        .qa {
+            width: 400px;
+
+            section {
+                h1 {
+                    font-size: 22px;
+                }
+
+                p {
+                    font-size: 20px;
+                }
+            }
+
+            i {
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .qas {
+        .qa {
+            width: 200px;
+
+            section {
+                h1 {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 18px;
+                }
+            }
+
+            i {
+                font-size: 30px;
+            }
+        }
+    }
+}

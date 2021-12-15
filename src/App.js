@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Link, Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import {
+  Link,
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  Redirect,
+} from "react-router-dom";
 /*HOME PAGE*/
 import HomeHeader from "./Header/HomeHeader/header";
 import Dropdown from "./Page/Home/Dropdown/dropdown";
@@ -35,6 +41,9 @@ const App = () => {
             <HomeSection />
             <QAs />
             <Footer />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/home" />
           </Route>
           <Route path="/">
             <NotFound />

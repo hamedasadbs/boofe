@@ -200,3 +200,11 @@
         }
     }
 }
+
+@media only screen and (max-width: 350px) {
+    .header {
+        nav {
+            width: 250px;
+        }
+    }
+}
