@@ -1,0 +1,108 @@
+.bigRestaurant {
+    width: 300px;
+
+    img {
+        width: 280px;
+    }
+}
+
+.restaurant {
+    width: 200px;
+
+    img {
+        width: 180px;
+    }
+}
+
+.bigRestaurant,
+.restaurant {
+    height: 320px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: all 0.5s;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        cursor: pointer;
+    }
+
+    img {
+        height: 150px;
+        border-radius: 20px;
+        margin: 10px auto;
+        object-fit: cover;
+    }
+
+    h1 {
+        margin: 0 auto;
+        font-size: 25px;
+        font-family: specialFont;
+        color: rgb(44, 44, 44);
+        font-weight: bold;
+    }
+
+    .stars {
+        margin: 5px auto;
+        display: flex;
+
+        .starOn {
+            color: gold;
+            margin: 3px 1px;
+        }
+
+        .starOff {
+            color: lightgrey;
+            margin: 3px 1px;
+        }
+
+        .point {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(236, 4, 112);
+            color: white;
+            text-align: center;
+            margin: auto;
+            margin-left: 5px;
+            padding: 0 3px;
+            padding-bottom: 4px;
+            border-radius: 5px;
+        }
+    }
+
+    h2 {
+        margin: 0 auto;
+        font-size: 15px;
+        font-family: specialFont;
+        color: rgb(95, 95, 95);
+        font-weight: bold;
+    }
+
+    .adds {
+        margin: 10px auto;
+        display: flex;
+
+        .firstAdd {
+            background-color: #daa000;
+        }
+
+        .secondAdd {
+            background-color: rgb(92, 136, 25);
+        }
+
+        .firstAdd,
+        .secondAdd {
+            text-align: center;
+            padding: 5px 15px;
+            font-size: 17px;
+            font-family: myFont;
+            font-weight: bold;
+            color: white;
+            border-radius: 50px;
+            margin: 0 2px;
+        }
+    }
+}

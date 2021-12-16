@@ -7,14 +7,16 @@ import {
   Redirect,
 } from "react-router-dom";
 /*HOME PAGE*/
-import HomeHeader from "./Header/HomeHeader/header";
+import Header from "./Header/header";
 import Dropdown from "./Page/Home/Dropdown/dropdown";
 import HomeSection from "./Page/Home/Section/section";
 import QAs from "./Page/Home/QAs/qas";
 /*SIGN PAGE*/
-import Header from "./Header/header";
+import SignHeader from "./Header/SignHeader/header";
 import Tab from "./Page/Sign/Tab/tab";
 import Section from "./Page/Sign/Section/section";
+/*RESTAURANTS PAGE*/
+import Restaurants from "./Page/Restaurants/restaurants";
 /*404 PAGE*/
 import NotFound from "./Page/NotFound/notFound";
 
@@ -30,13 +32,18 @@ const App = () => {
       <Router>
         <Switch>
           <Route path="/sign">
-            <Header />
+            <SignHeader />
             <Tab activeTab={activeTabHandler} />
             <Section activeTab={activeTab} />
             <Footer />
           </Route>
+          <Route path="/restaurants">
+            <Header />
+            <Restaurants />
+            <Footer />
+          </Route>
           <Route path="/home">
-            <HomeHeader />
+            <Header />
             <Dropdown />
             <HomeSection />
             <QAs />
