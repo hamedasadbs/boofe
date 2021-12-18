@@ -1,7 +1,9 @@
+@import '../../index.module.scss';
+
 .restaurants {
     width: auto;
     padding: 10px 0;
-    background-color: rgb(230, 230, 230);
+    background-color: $mainGray;
     display: flex;
 
     main {

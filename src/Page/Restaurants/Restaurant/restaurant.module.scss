@@ -1,3 +1,5 @@
+@import '../../../index.module.scss';
+
 .bigRestaurant {
     width: 42%;
 
@@ -41,7 +43,7 @@
         margin: 0 auto;
         font-size: 25px;
         font-family: specialFont;
-        color: rgb(44, 44, 44);
+        color: $header;
         font-weight: bold;
     }
 
@@ -62,7 +64,7 @@
         .point {
             width: 20px;
             height: 20px;
-            background-color: rgb(236, 4, 112);
+            background-color: $mainPurple;
             color: white;
             text-align: center;
             margin: auto;
@@ -77,7 +79,7 @@
         margin: 0 auto;
         font-size: 15px;
         font-family: specialFont;
-        color: rgb(95, 95, 95);
+        color: $link;
         font-weight: bold;
     }
 
@@ -86,11 +88,11 @@
         display: flex;
 
         .firstAdd {
-            background-color: #daa000;
+            background-color: $btnBackColor2;
         }
 
         .secondAdd {
-            background-color: rgb(92, 136, 25);
+            background-color: $mainGreen;
         }
 
         .firstAdd,

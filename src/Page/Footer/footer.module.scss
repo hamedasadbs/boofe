@@ -1,3 +1,5 @@
+@import '../../index.module.scss';
+
 .footer {
     width: 100%;
     background-color: white;
@@ -25,31 +27,31 @@
 
         .facebook {
             &:hover {
-                color: blue;
+                color: $facebook;
             }
         }
 
         .twitter {
             &:hover {
-                color: rgb(0, 174, 255);
+                color: $twitter;
             }
         }
 
         .linkedin {
             &:hover {
-                color: rgb(0, 143, 209);
+                color: $linkedin;
             }
         }
 
         .pinterest {
             &:hover {
-                color: rgb(209, 0, 10);
+                color: $pinterest;
             }
         }
 
         .instagram {
             &:hover {
-                background: -webkit-gradient(linear, left bottom, right top, from(rgb(251, 255, 0)), to(rgb(250, 3, 65)));
+                background: -webkit-gradient(linear, left bottom, right top, from($instagram1), to($instagram2));
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
@@ -58,12 +60,12 @@
         h1 {
             font-family: myFont;
             font-size: 25px;
-            color: rgb(173, 173, 173);
+            color: $link;
             margin: 0px 40px 20px 40px;
             transition: all 0.3s;
 
             &:hover {
-                color: #daa000;
+                color: $btnBackColor1;
                 cursor: pointer;
             }
         }

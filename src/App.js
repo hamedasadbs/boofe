@@ -1,29 +1,31 @@
+/*INNER-COMPONENTS*/
 import { useState } from "react";
 import {
-  Link,
   Switch,
   Route,
   BrowserRouter as Router,
   Redirect,
 } from "react-router-dom";
-/*HOME PAGE*/
-import HomeHeader from "./Header/HomeHeader/header";
-import Dropdown from "./Page/Home/Dropdown/dropdown";
-import HomeSection from "./Page/Home/Section/section";
-import QAs from "./Page/Home/QAs/qas";
-/*SIGN PAGE*/
-import SignHeader from "./Header/SignHeader/header";
-import Tab from "./Page/Sign/Tab/tab";
-import Section from "./Page/Sign/Section/section";
-/*RESTAURANTS PAGE*/
-import RestaurantHeader from "./Header/RestaurantHeader/header";
-import Restaurants from "./Page/Restaurants/restaurants";
-/*404 PAGE*/
-import NotFound from "./Page/NotFound/notFound";
+/*CHILD-COMPONENTS*/
+/*->HOME PAGE<-*/
+import { HomeHeader } from "./Header/HomeHeader/header";
+import { Dropdown } from "./Page/Home/Dropdown/dropdown";
+import { HomeSection } from "./Page/Home/Section/section";
+import { QAs } from "./Page/Home/QAs/qas";
+import { PublicOpinion } from "./Page/Home/PublicOpinion/publicOpinion";
+/*->SIGN PAGE<-*/
+import { SignHeader } from "./Header/SignHeader/header";
+import { Tab } from "./Page/Sign/Tab/tab";
+import { SignSection } from "./Page/Sign/Section/section";
+/*->RESTAURANTS PAGE<-*/
+import { RestaurantHeader } from "./Header/RestaurantHeader/header";
+import { Restaurants } from "./Page/Restaurants/restaurants";
+/*->404 PAGE<-*/
+import { NotFound } from "./Page/NotFound/notFound";
+/*->FOOTER<-*/
+import { Footer } from "./Page/Footer/footer";
 
-import Footer from "./Page/Footer/footer";
-
-const App = () => {
+export const App = () => {
   const [activeTab, setActiveTab] = useState("login");
   const activeTabHandler = (at) => {
     setActiveTab(at);
@@ -35,7 +37,7 @@ const App = () => {
           <Route path="/sign">
             <SignHeader />
             <Tab activeTab={activeTabHandler} />
-            <Section activeTab={activeTab} />
+            <SignSection activeTab={activeTab} />
             <Footer />
           </Route>
           <Route path="/restaurants">
@@ -48,6 +50,7 @@ const App = () => {
             <Dropdown />
             <HomeSection />
             <QAs />
+            <PublicOpinion />
             <Footer />
           </Route>
           <Route exact path="/">
@@ -61,5 +64,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;

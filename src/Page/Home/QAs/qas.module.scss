@@ -1,6 +1,8 @@
+@import '../../../index.module.scss';
+
 .qas {
     width: auto;
-    background-color: rgb(230, 230, 230);
+    background-color: $mainGray;
     display: flex;
     flex-direction: column;
     padding: 80px 0;
@@ -9,7 +11,7 @@
         margin: 40px auto;
         font-size: 23px;
         font-family: specialFont;
-        color: gray;
+        color: $title;
         border-bottom: 1px solid lightgray;
         padding-bottom: 15px;
     }
@@ -31,7 +33,7 @@
 
         section {
             h1 {
-                color: purple;
+                color: $header;
                 margin: initial;
                 font-size: 25px;
                 font-family: myFont;
@@ -42,16 +44,31 @@
             p {
                 text-align: right;
                 font-family: myFont;
-                color: gray;
+                color: $paragraph;
                 font-size: 23px;
             }
         }
 
         i {
             font-size: 60px;
-            color: lightgray;
+            color: $mainPurple;
             margin: auto;
             margin-left: 30px;
+        }
+    }
+
+    a {
+        .scrollUpActive {
+            display: initial;
+            position: fixed;
+            top: 600px;
+            left: 50px;
+            font-size: 100px;
+            color: $active;
+        }
+
+        .scrollUpNotActive {
+            display: none;
         }
     }
 }

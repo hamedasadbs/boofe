@@ -1,6 +1,7 @@
+/*CSS*/
 import style from "./restaurant.module.scss";
 
-const Restaurant = (props) => (
+export const Restaurant = (props) => (
   <>
     {props.big ? (
       <section className={style.bigRestaurant}>
@@ -42,5 +43,3 @@ const Restaurant = (props) => (
     )}
   </>
 );
-
-export default Restaurant;

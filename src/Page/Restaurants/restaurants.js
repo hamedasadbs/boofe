@@ -1,5 +1,8 @@
+/*CSS*/
 import style from "./restaurants.module.scss";
-import Restaurant from "./Restaurant/restaurant";
+/*CHILD-COMPONENTS*/
+import { Restaurant } from "./Restaurant/restaurant";
+/*ASSETS*/
 import resPhoto1 from "../../Images/res1.jpg";
 import resPhoto2 from "../../Images/res2.jpg";
 import resPhoto3 from "../../Images/res3.jpg";
@@ -8,7 +11,7 @@ import resPhoto5 from "../../Images/res5.jpg";
 import resPhoto6 from "../../Images/res6.jpg";
 import resPhoto7 from "../../Images/res7.jpg";
 
-const Restaurants = () => (
+export const Restaurants = () => (
   <div className={style.restaurants}>
     <main>
       <Restaurant
@@ -65,5 +68,3 @@ const Restaurants = () => (
     </main>
   </div>
 );
-
-export default Restaurants;

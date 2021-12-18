@@ -1,7 +1,10 @@
+/*INNER-COMPONENTS*/
+import { useEffect } from "react";
+/*CSS*/
 import style from "./dropdown.module.scss";
 
-const Dropdown = () => {
-  const scrollHandler = () => {
+export const Dropdown = () => {
+  const scroller = () => {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -12,6 +15,13 @@ const Dropdown = () => {
       });
     });
   };
+  useEffect(() => {
+    scroller();
+  }, []);
+  const scrollHandler = () => {
+    scroller();
+  };
+
   return (
     <article className={style.dropdown}>
       <a onClick={scrollHandler} href="#qa">
@@ -20,5 +30,3 @@ const Dropdown = () => {
     </article>
   );
 };
-
-export default Dropdown;

@@ -1,6 +1,7 @@
+/*CSS*/
 import style from "./section.module.scss";
 
-const Section = (props) => (
+export const SignSection = (props) => (
   <section className={style.section}>
     {props.activeTab === "login" ? (
       <div className={style.login}>
@@ -51,5 +52,3 @@ const Section = (props) => (
     )}
   </section>
 );
-
-export default Section;

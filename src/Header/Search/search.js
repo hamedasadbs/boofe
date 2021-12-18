@@ -1,8 +1,9 @@
+/*INNER-COMPONENTS*/
 import { useState } from "react";
-
+/*CSS*/
 import style from "./search.module.scss";
 
-const Search = () => {
+export const Search = () => {
   const [firstType, setFirstType] = useState(true);
   const [secondType, setSecondType] = useState(false);
 
@@ -45,5 +46,3 @@ const Search = () => {
     </nav>
   );
 };
-
-export default Search;

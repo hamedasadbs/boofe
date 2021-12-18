@@ -1,6 +1,7 @@
+/*CSS*/
 import style from "./footer.module.scss";
 
-const Footer = () => (
+export const Footer = () => (
   <footer className={style.footer}>
     <div className={style.icons}>
       <i className={`fa fa-facebook-square ${style.facebook}`}></i>
@@ -18,5 +19,3 @@ const Footer = () => (
     </div>
   </footer>
 );
-
-export default Footer;

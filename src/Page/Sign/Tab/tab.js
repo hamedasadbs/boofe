@@ -1,8 +1,9 @@
+/*INNER-COMPONENTS*/
 import { useState } from "react";
-
+/*CSS*/
 import style from "./tab.module.scss";
 
-const Tab = (props) => {
+export const Tab = (props) => {
   const [login, setLogin] = useState(true);
   const [signup, setSignup] = useState(false);
 
@@ -41,5 +42,3 @@ const Tab = (props) => {
     </div>
   );
 };
-
-export default Tab;

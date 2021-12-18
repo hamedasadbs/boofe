@@ -8,14 +8,12 @@
     background-position-y: -20px;
     background-position-x: -50px;
 
-
     .account {
         background-color: rgba(255, 255, 255, 0.2);
         display: flex;
         width: auto;
         justify-content: end;
-        border-bottom: 1px solid gray;
-        box-shadow: inset 0 0 10px gray;
+        box-shadow: inset 0 10px 10px gray;
 
         h1 {
             font-family: specialFont;

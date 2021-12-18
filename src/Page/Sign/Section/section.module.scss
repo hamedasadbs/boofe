@@ -1,6 +1,8 @@
+@import '../../../index.module.scss';
+
 .section {
     width: 100%;
-    background-color: rgb(230, 230, 230);
+    background-color: $mainGray;
     display: flex;
 
     .login,
@@ -11,7 +13,7 @@
 
         h1 {
             text-align: center;
-            color: gray;
+            color: $title;
         }
 
         .form {
@@ -31,18 +33,17 @@
             button {
                 color: white;
                 transition: all 0.5s;
-                background-color: #21D4FD;
                 border: none;
                 border-radius: 50px;
                 font-family: myFont;
                 padding: 5px;
                 font-weight: bold;
                 font-size: 25px;
-                background-image: linear-gradient(19deg, rgb(114, 168, 32) 0%, rgb(38, 63, 1) 100%);
+                background-image: linear-gradient(19deg, $mainGreen 0%, darken($mainGreen, 20%) 100%);
 
                 &:hover {
                     cursor: pointer;
-                    background-image: linear-gradient(19deg, #daa000 0%, #cf531a 100%);
+                    background-image: linear-gradient(19deg, $btnBackColor1 0%, $btnBackColor2 100%);
                 }
             }
 
@@ -59,7 +60,7 @@
                     z-index: 2;
                     padding: 10px;
                     margin: 10px;
-                    color: rgb(90, 90, 90);
+                    color: $notActive;
                     transition: all 0.3s;
                 }
 
@@ -81,7 +82,7 @@
                         outline: none;
 
                         +i {
-                            color: #cf531a;
+                            color: $btnBackColor2;
                         }
                     }
 
@@ -96,7 +97,7 @@
             .terms {
                 text-align: right;
                 font-family: specialFont;
-                color: rgb(51, 51, 51);
+                color: $header;
                 font-weight: bold;
                 font-size: 18px;
 
@@ -111,14 +112,14 @@
 
                 a {
                     font-family: myFont;
-                    color: rgb(0, 115, 209);
+                    color: $twitter;
                     padding-bottom: 5px;
                     margin: auto;
                     margin-right: 0;
                     transition: all 0.3s;
 
                     &:hover {
-                        color: #cf531a;
+                        color: $btnBackColor2;
                     }
                 }
             }

@@ -1,10 +1,11 @@
+/*CSS*/
 import style from "./header.module.scss";
-
+/*ASSETS*/
 import logo from "../../Images/logo.png";
+/*CHILD-COMPONENTS*/
+import { Search } from "../Search/search";
 
-import Search from "../Search/search";
-
-const Header = () => (
+export const RestaurantHeader = () => (
   <div className={style.header}>
     <div className={style.account}>
       <img src={logo} alt="logo" />
@@ -14,5 +15,3 @@ const Header = () => (
     <Search />
   </div>
 );
-
-export default Header;

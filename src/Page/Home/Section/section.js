@@ -1,9 +1,11 @@
+/*CSS*/
 import style from "./section.module.scss";
+/*ASSETS*/
 import cart from "../../../Images/cart.png";
 import food from "../../../Images/food.png";
 import map from "../../../Images/map.png";
 
-const Section = () => (
+export const HomeSection = () => (
   <section className={style.section}>
     <div className={style.off}>
       <h1>تخفیف %10</h1>
@@ -39,5 +41,3 @@ const Section = () => (
     </div>
   </section>
 );
-
-export default Section;

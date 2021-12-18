@@ -1,8 +1,9 @@
+/*CSS*/
 import style from "./header.module.scss";
-
+/*ASSETS*/
 import logo from "../../Images/logo.png";
 
-const Header = () => (
+export const SignHeader = () => (
   <div className={style.header}>
     <div className={style.logo}>
       <a href="/">
@@ -11,5 +12,3 @@ const Header = () => (
     </div>
   </div>
 );
-
-export default Header;
