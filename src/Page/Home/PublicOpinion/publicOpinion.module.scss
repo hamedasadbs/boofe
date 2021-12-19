@@ -102,6 +102,10 @@
     .pos {
         main {
             flex-direction: column;
+
+            .po {
+                margin: 40px auto;
+            }
         }
     }
 }

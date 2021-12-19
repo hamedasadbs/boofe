@@ -145,3 +145,23 @@
         }
     }
 }
+
+@media only screen and (max-width: 400px) {
+    .bigRestaurant {
+        .adds {
+            flex-direction: column;
+
+            .secondAdd {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .restaurant {
+        width: 97%;
+
+        .adds {
+            flex-direction: column;
+        }
+    }
+}

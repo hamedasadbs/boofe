@@ -55,3 +55,15 @@
         }
     }
 }
+
+@media only screen and (max-width: 400px) {
+    .header {
+        main {
+            margin-bottom: 20px;
+
+            .logo {
+                margin-left: 10%;
+            }
+        }
+    }
+}
