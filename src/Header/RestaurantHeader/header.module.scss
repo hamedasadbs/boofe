@@ -11,7 +11,7 @@
     background-position-x: -50px;
 
 
-    .account {
+    main {
         background-color: $mainGreen;
         display: flex;
         width: auto;
@@ -19,46 +19,38 @@
         border-bottom: 1px solid gray;
         box-shadow: inset 0 0 10px gray;
 
-        h1 {
-            font-family: specialFont;
-            font-size: 18px;
-            color: white;
-        }
-
-        i {
-            font-size: 25px;
-            margin: auto 10% auto 10px;
-            color: white;
-        }
-
-        img {
-            width: 40px;
-            height: 40px;
-            margin: auto;
-            margin-left: 50%;
-        }
-    }
-
-    .logo {
-        margin: auto;
-        width: auto;
-        display: flex;
-        flex-direction: column;
-
-        a {
-            img {
-                width: 50px;
-                height: 50px;
-                margin: auto;
-            }
+        .account {
+            display: flex;
+            margin-right: 10%;
+            padding: 5px 0;
 
             h1 {
-                font-family: myFont;
-                margin-top: 0px;
+                font-family: specialFont;
+                font-size: 18px;
                 color: white;
-                font-size: 30px;
-                text-align: center;
+            }
+
+            i {
+                font-size: 25px;
                 margin: auto;
+                margin-left: 10px;
+                color: white;
+            }
+        }
+
+        .logo {
+            margin: auto;
+            margin-left: 50%;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                img {
+                    width: 40px;
+                    height: 40px;
+                    margin: auto;
+                }
             }
         }
     }

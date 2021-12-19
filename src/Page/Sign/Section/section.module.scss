@@ -39,11 +39,12 @@
                 padding: 5px;
                 font-weight: bold;
                 font-size: 25px;
-                background-image: linear-gradient(19deg, $mainGreen 0%, darken($mainGreen, 20%) 100%);
+                background-color: darken($mainGreen, 10%);
+                transition: all 0.3s;
 
                 &:hover {
                     cursor: pointer;
-                    background-image: linear-gradient(19deg, $btnBackColor1 0%, $btnBackColor2 100%);
+                    background-color: darken($mainOrange, 10%);
                 }
             }
 
@@ -82,7 +83,7 @@
                         outline: none;
 
                         +i {
-                            color: $btnBackColor2;
+                            color: $mainOrange;
                         }
                     }
 
@@ -119,7 +120,7 @@
                     transition: all 0.3s;
 
                     &:hover {
-                        color: $btnBackColor2;
+                        color: $mainOrange;
                     }
                 }
             }
