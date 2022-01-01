@@ -5,8 +5,7 @@
     background-color: $mainGray;
     display: flex;
 
-    .login,
-    .signup {
+    .sign {
         display: flex;
         flex-direction: column;
         margin: 70px auto;
@@ -75,7 +74,7 @@
                     font-size: 18px;
                     font-family: specialFont;
                     background-color: transparent;
-                    width: auto;
+                    width: 100%;
                     margin: auto;
                     text-align: left;
 

@@ -5,7 +5,7 @@
     height: 60px;
     display: flex;
     flex-direction: column;
-    background-color: $mainGreen;
+    background-color: darken($mainGreen, 10%);
 
     .logo {
         margin: auto;

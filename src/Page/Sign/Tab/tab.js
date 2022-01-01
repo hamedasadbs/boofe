@@ -3,7 +3,7 @@ import { useState } from "react";
 /*CSS*/
 import style from "./tab.module.scss";
 
-export const Tab = (props) => {
+export const SignTab = (props) => {
   const [login, setLogin] = useState(true);
   const [signup, setSignup] = useState(false);
 

@@ -15,20 +15,29 @@ import { QAs } from "./Page/Home/QAs/qas";
 import { PublicOpinion } from "./Page/Home/PublicOpinion/publicOpinion";
 /*->SIGN PAGE<-*/
 import { SignHeader } from "./Header/SignHeader/header";
-import { Tab } from "./Page/Sign/Tab/tab";
+import { SignTab } from "./Page/Sign/Tab/tab";
 import { SignSection } from "./Page/Sign/Section/section";
 /*->RESTAURANTS PAGE<-*/
 import { RestaurantHeader } from "./Header/RestaurantHeader/header";
 import { Restaurants } from "./Page/Restaurants/restaurants";
+/*->Admin PAGE<-*/
+import { AdminTab } from "./Page/Admin/Tab/tab";
+import { AdminSection } from "./Page/Admin/Section/section";
 /*->404 PAGE<-*/
 import { NotFound } from "./Page/NotFound/notFound";
 /*->FOOTER<-*/
 import { Footer } from "./Page/Footer/footer";
 
 export const App = () => {
-  const [activeTab, setActiveTab] = useState("login");
-  const activeTabHandler = (at) => {
-    setActiveTab(at);
+  const [signActiveTab, setSignActiveTab] = useState("login");
+  const [adminActiveTab, setAdminActiveTab] = useState("add");
+
+  const signActiveTabHandler = (at) => {
+    setSignActiveTab(at);
+  };
+
+  const adminActiveTabHandler = (at) => {
+    setAdminActiveTab(at);
   };
   return (
     <div>
@@ -36,8 +45,8 @@ export const App = () => {
         <Switch>
           <Route path="/sign">
             <SignHeader />
-            <Tab activeTab={activeTabHandler} />
-            <SignSection activeTab={activeTab} />
+            <SignTab activeTab={signActiveTabHandler} />
+            <SignSection activeTab={signActiveTab} />
             <Footer />
           </Route>
           <Route path="/restaurants">
@@ -52,6 +61,11 @@ export const App = () => {
             <QAs />
             <PublicOpinion />
             <Footer />
+          </Route>
+          <Route path="/admin">
+            <SignHeader />
+            <AdminTab activeTab={adminActiveTabHandler} />
+            <AdminSection activeTab={adminActiveTab} />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />

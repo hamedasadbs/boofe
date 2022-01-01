@@ -4,7 +4,7 @@ import style from "./section.module.scss";
 export const SignSection = (props) => (
   <section className={style.section}>
     {props.activeTab === "login" ? (
-      <div className={style.login}>
+      <div className={style.sign}>
         <h1>ورود</h1>
         <main>
           <div>
@@ -22,7 +22,7 @@ export const SignSection = (props) => (
         </main>
       </div>
     ) : (
-      <div className={style.signup}>
+      <div className={style.sign}>
         <h1>ثبت نام</h1>
         <main>
           <div>
