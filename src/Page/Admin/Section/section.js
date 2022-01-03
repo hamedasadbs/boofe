@@ -1,20 +1,27 @@
+/*INNER-COMPONENTS*/
+import axios from "axios";
+import { useEffect, useState } from "react";
 /*CSS*/
 import style from "./section.module.scss";
 /*CHILD-COMPONENTS*/
 import { AdminRestaurant } from "../Restaurant/restaurant";
-/*ASSETS*/
-import resPhoto1 from "../../../Images/res1.jpg";
-import resPhoto2 from "../../../Images/res2.jpg";
-import resPhoto3 from "../../../Images/res3.jpg";
-import resPhoto4 from "../../../Images/res4.jpg";
-import resPhoto5 from "../../../Images/res5.jpg";
-import resPhoto6 from "../../../Images/res6.jpg";
-import resPhoto7 from "../../../Images/res7.jpg";
 
 export const AdminSection = (props) => {
+  const url = "http://localhost/boofe/restaurants.php";
+  const [totalRestaurants, setTotalRestaurants] = useState([]);
+
   const pointHandler = (e) => {
     document.getElementById("pointLabel").innerHTML = e.target.value;
   };
+
+  const updateHandler = () => {
+    axios.get(url).then((res) => setTotalRestaurants(res.data));
+  };
+
+  useEffect(() => {
+    axios.get(url).then((res) => setTotalRestaurants(res.data));
+  }, []);
+
   return (
     <section className={style.section}>
       {props.activeTab === "add" ? (
@@ -54,7 +61,7 @@ export const AdminSection = (props) => {
               <label>
                 امتیاز: <span id="pointLabel">50</span>
               </label>
-              <i class="fa fa-money"></i>
+              <i className="fa fa-money"></i>
             </div>
             <button>افزودن</button>
           </main>
@@ -69,62 +76,18 @@ export const AdminSection = (props) => {
             </div>
           </main>
           <article>
-            <AdminRestaurant
-              img={resPhoto1}
-              stars="2"
-              points="50"
-              address="خیابان اول"
-              title="رستوران اول"
-              delete
-            />
-            <AdminRestaurant
-              img={resPhoto2}
-              stars="3"
-              points="90"
-              address="خیابان دوم"
-              title="رستوران دوم"
-              delete
-            />
-            <AdminRestaurant
-              img={resPhoto3}
-              stars="5"
-              points="15"
-              address="خیابان سوم"
-              title="رستوران سوم"
-              delete
-            />
-            <AdminRestaurant
-              img={resPhoto4}
-              stars="0"
-              points="45"
-              address="خیابان چهارم"
-              title="رستوران چهارم"
-              delete
-            />
-            <AdminRestaurant
-              img={resPhoto5}
-              stars="1"
-              points="65"
-              address="خیابان پنجم"
-              title="رستوران پنجم"
-              delete
-            />
-            <AdminRestaurant
-              img={resPhoto6}
-              stars="2"
-              points="32"
-              address="خیابان ششم"
-              title="رستوران ششم"
-              delete
-            />
-            <AdminRestaurant
-              img={resPhoto7}
-              stars="3"
-              points="50"
-              address="خیابان هفتم"
-              title="رستوران هفتم"
-              delete
-            />
+            {totalRestaurants.map((res) => (
+              <AdminRestaurant
+                id={res.id}
+                img={res.image}
+                stars={res.star}
+                points={res.point}
+                address={res.address}
+                title={res.title}
+                update={updateHandler}
+                delete
+              />
+            ))}
           </article>
         </div>
       ) : (
@@ -137,62 +100,18 @@ export const AdminSection = (props) => {
             </div>
           </main>
           <article>
-            <AdminRestaurant
-              img={resPhoto1}
-              stars="2"
-              points="50"
-              address="خیابان اول"
-              title="رستوران اول"
-              edit
-            />
-            <AdminRestaurant
-              img={resPhoto2}
-              stars="3"
-              points="90"
-              address="خیابان دوم"
-              title="رستوران دوم"
-              edit
-            />
-            <AdminRestaurant
-              img={resPhoto3}
-              stars="5"
-              points="15"
-              address="خیابان سوم"
-              title="رستوران سوم"
-              edit
-            />
-            <AdminRestaurant
-              img={resPhoto4}
-              stars="0"
-              points="45"
-              address="خیابان چهارم"
-              title="رستوران چهارم"
-              edit
-            />
-            <AdminRestaurant
-              img={resPhoto5}
-              stars="1"
-              points="65"
-              address="خیابان پنجم"
-              title="رستوران پنجم"
-              edit
-            />
-            <AdminRestaurant
-              img={resPhoto6}
-              stars="2"
-              points="32"
-              address="خیابان ششم"
-              title="رستوران ششم"
-              edit
-            />
-            <AdminRestaurant
-              img={resPhoto7}
-              stars="3"
-              points="50"
-              address="خیابان هفتم"
-              title="رستوران هفتم"
-              edit
-            />
+            {totalRestaurants.map((res) => (
+              <AdminRestaurant
+                id={res.id}
+                img={res.image}
+                stars={res.star}
+                points={res.point}
+                address={res.address}
+                title={res.title}
+                update={updateHandler}
+                edit
+              />
+            ))}
           </article>
         </div>
       )}

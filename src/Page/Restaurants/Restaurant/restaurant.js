@@ -3,9 +3,9 @@ import style from "./restaurant.module.scss";
 
 export const Restaurant = (props) => (
   <>
-    {props.big ? (
+    {props.isBig == 1 ? (
       <section className={style.bigRestaurant}>
-        <img src={props.img} alt="restaurant" />
+        <img src={`/Images/Restaurants/${props.img}`} alt="restaurant" />
         <h1>{props.title}</h1>
         <div className={style.stars}>
           {[...Array(parseInt(props.stars))].map((x) => (
@@ -24,7 +24,7 @@ export const Restaurant = (props) => (
       </section>
     ) : (
       <section className={style.restaurant}>
-        <img src={props.img} alt="restaurant" />
+        <img src={`/Images/Restaurants/${props.img}`} alt="restaurant" />
         <h1>{props.title}</h1>
         <div className={style.stars}>
           {[...Array(parseInt(props.stars))].map((x) => (

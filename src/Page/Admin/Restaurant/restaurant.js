@@ -1,14 +1,28 @@
 /*INNER-COMPONENTS*/
+import axios from "axios";
+/*INNER-COMPONENTS*/
 import { useState } from "react";
 /*CSS*/
 import style from "./restaurant.module.scss";
 
 export const AdminRestaurant = (props) => {
+  const url = "http://localhost/boofe/restaurants.php";
   const [inEdit, setInEdit] = useState(false);
 
   const deleteHandler = () => {
     if (window.confirm("آیا از حذف این رستوران مطمئن هستید؟")) {
-      alert("با موفقیت حذف شد");
+      let id = props.id;
+      axios
+        .delete(
+          url,
+          JSON.stringify({
+            id,
+          })
+        )
+        .then((res) => {
+          alert(res.data);
+          props.update();
+        });
     }
   };
 
@@ -18,17 +32,37 @@ export const AdminRestaurant = (props) => {
   };
 
   const saveEditHandler = () => {
-    alert("با موفقیت ذخیره شد");
+    let id = props.id;
+    let title = document.getElementById("title").value;
+    let address = document.getElementById("address").value;
+
+    if (title == "") title = props.title;
+    if (address == "") address = props.address;
+
+    axios
+      .post(
+        url,
+        JSON.stringify({
+          id,
+          title,
+          address,
+        })
+      )
+      .then((res) => {
+        alert(res.data);
+        props.update();
+        editHandler();
+      });
   };
 
   return (
     <>
       <section className={style.restaurant}>
-        <img src={props.img} alt="restaurant" />
+        <img src={`/Images/Restaurants/${props.img}`} alt="restaurant" />
         {inEdit ? (
           <>
             <h1>
-              <input placeholder={props.title} />
+              <input id="title" placeholder={props.title} />
             </h1>
             <div className={style.stars}>
               {[...Array(parseInt(props.stars))].map((x) => (
@@ -40,7 +74,7 @@ export const AdminRestaurant = (props) => {
               <div className={style.point}>{props.points}</div>
             </div>
             <h2>
-              <textarea placeholder={props.address}></textarea>
+              <textarea id="address" placeholder={props.address}></textarea>
             </h2>
             {props.delete && (
               <button className={style.delete} onClick={deleteHandler}>
