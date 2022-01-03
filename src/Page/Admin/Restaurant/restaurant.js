@@ -13,10 +13,11 @@ export const AdminRestaurant = (props) => {
     if (window.confirm("آیا از حذف این رستوران مطمئن هستید؟")) {
       let id = props.id;
       axios
-        .delete(
+        .post(
           url,
           JSON.stringify({
             id,
+            goal: "delete",
           })
         )
         .then((res) => {
@@ -46,6 +47,7 @@ export const AdminRestaurant = (props) => {
           id,
           title,
           address,
+          goal: "update",
         })
       )
       .then((res) => {

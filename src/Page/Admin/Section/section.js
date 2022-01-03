@@ -18,6 +18,37 @@ export const AdminSection = (props) => {
     axios.get(url).then((res) => setTotalRestaurants(res.data));
   };
 
+  const addHandler = () => {
+    let title = document.getElementById("title").value;
+    let address = document.getElementById("address").value;
+    let star = document.getElementById("star").value;
+    let point = document.getElementById("point").value;
+    let image = document.getElementById("image").value;
+
+    if (title == "" || address == "")
+      alert("لطفا تمامی اطلاعات رستوران را وارد کنید");
+    else {
+      if (window.confirm("آیا از ایجاد این رستوران مطمئن هستید؟")) {
+        axios
+          .post(
+            url,
+            JSON.stringify({
+              title,
+              address,
+              star,
+              point,
+              image,
+              goal: "add",
+            })
+          )
+          .then((res) => {
+            alert(res.data);
+            updateHandler();
+          });
+      }
+    }
+  };
+
   useEffect(() => {
     axios.get(url).then((res) => setTotalRestaurants(res.data));
   }, []);
@@ -29,21 +60,23 @@ export const AdminSection = (props) => {
           <h1>افزودن رستوران جدید</h1>
           <main>
             <div>
-              <input placeholder="نام رستوران" />
+              <input id="title" placeholder="نام رستوران" />
               <i className="fa fa-spoon"></i>
             </div>
             <div>
-              <textarea placeholder="آدرس رستوران"></textarea>
+              <textarea id="address" placeholder="آدرس رستوران"></textarea>
               <i className="fa fa-map"></i>
             </div>
             <div>
-              <select>
-                <option>5</option>
-                <option>4</option>
-                <option>3</option>
-                <option>2</option>
-                <option>1</option>
-                <option>0</option>
+              <select id="star">
+                <option selected value="5">
+                  5
+                </option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+                <option value="0">0</option>
               </select>
               <label>تعداد ستاره ها</label>
               <i className="fa fa-star"></i>
@@ -56,6 +89,7 @@ export const AdminSection = (props) => {
                   min="0"
                   max="100"
                   className={style.slider}
+                  id="point"
                 />
               </div>
               <label>
@@ -63,7 +97,18 @@ export const AdminSection = (props) => {
               </label>
               <i className="fa fa-money"></i>
             </div>
-            <button>افزودن</button>
+            <div>
+              <form
+                action="restaurant.php"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                <input type="file" id="image" />
+              </form>
+              <label>تصویر</label>
+              <i className="fa fa-picture-o"></i>
+            </div>
+            <button onClick={addHandler}>افزودن</button>
           </main>
         </div>
       ) : props.activeTab === "remove" ? (
@@ -78,6 +123,7 @@ export const AdminSection = (props) => {
           <article>
             {totalRestaurants.map((res) => (
               <AdminRestaurant
+                key={res.id}
                 id={res.id}
                 img={res.image}
                 stars={res.star}
@@ -102,6 +148,7 @@ export const AdminSection = (props) => {
           <article>
             {totalRestaurants.map((res) => (
               <AdminRestaurant
+                key={res.id}
                 id={res.id}
                 img={res.image}
                 stars={res.star}
