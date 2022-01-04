@@ -3,7 +3,7 @@ import style from "./restaurant.module.scss";
 
 export const Restaurant = (props) => (
   <>
-    {props.isBig == 1 ? (
+    {props.index % 4 === 0 ? (
       <section className={style.bigRestaurant}>
         <img src={`/Images/Restaurants/${props.img}`} alt="restaurant" />
         <h1>{props.title}</h1>

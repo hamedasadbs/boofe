@@ -20,8 +20,7 @@ export const AdminRestaurant = (props) => {
             goal: "delete",
           })
         )
-        .then((res) => {
-          alert(res.data);
+        .then(() => {
           props.update();
         });
     }
@@ -37,24 +36,27 @@ export const AdminRestaurant = (props) => {
     let title = document.getElementById("title").value;
     let address = document.getElementById("address").value;
 
-    if (title == "") title = props.title;
-    if (address == "") address = props.address;
+    if (title === "" && address !== "") title = props.title;
+    if (title !== "" && address === "") address = props.address;
 
-    axios
-      .post(
-        url,
-        JSON.stringify({
-          id,
-          title,
-          address,
-          goal: "update",
-        })
-      )
-      .then((res) => {
-        alert(res.data);
-        props.update();
-        editHandler();
-      });
+    if (title === "" && address === "") editHandler();
+    else {
+      axios
+        .post(
+          url,
+          JSON.stringify({
+            id,
+            title,
+            address,
+            goal: "update",
+          })
+        )
+        .then((res) => {
+          alert(res.data);
+          props.update();
+          editHandler();
+        });
+    }
   };
 
   return (

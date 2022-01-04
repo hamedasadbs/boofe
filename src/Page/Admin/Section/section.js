@@ -25,7 +25,7 @@ export const AdminSection = (props) => {
     let point = document.getElementById("point").value;
     let image = document.getElementById("image").value;
 
-    if (title == "" || address == "")
+    if (title === "" || address === "")
       alert("لطفا تمامی اطلاعات رستوران را وارد کنید");
     else {
       if (window.confirm("آیا از ایجاد این رستوران مطمئن هستید؟")) {

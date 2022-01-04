@@ -17,14 +17,15 @@ export const Restaurants = () => {
   return (
     <div className={style.restaurants}>
       <main>
-        {totalRestaurants.map((res) => (
+        {totalRestaurants.map((res, index) => (
           <Restaurant
             img={res.image}
             stars={res.star}
             points={res.point}
             address={res.address}
             title={res.title}
-            isBig={res.is_big}
+            index={index}
+            key={index}
           />
         ))}
       </main>
