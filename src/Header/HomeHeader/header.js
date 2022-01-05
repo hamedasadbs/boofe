@@ -7,10 +7,10 @@ import logo from "../../Images/logo.png";
 /*CHILD-COMPONENTS*/
 import { Search } from "../Search/search";
 
-export const HomeHeader = () => (
+export const HomeHeader = (props) => (
   <div id="home" className={style.header}>
     <Link className={style.account} to="/sign">
-      <h1>حامد اسداللهی</h1>
+      <h1>{props.token}</h1>
       <i className="fa fa-user"></i>
     </Link>
     <div className={style.logo}>
