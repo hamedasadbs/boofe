@@ -14,10 +14,10 @@ export const HomeHeader = (props) => (
       <i className="fa fa-user"></i>
     </Link>
     <div className={style.logo}>
-      <a href="/home">
+      <Link to="/home">
         <img src={logo} alt="logo" />
         <h1>بوفه</h1>
-      </a>
+      </Link>
     </div>
     <Search />
   </div>
