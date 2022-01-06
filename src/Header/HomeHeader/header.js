@@ -16,7 +16,7 @@ export const HomeHeader = (props) => (
     <div className={style.logo}>
       <Link to="/home">
         <img src={logo} alt="logo" />
-        <h1>بوفه</h1>
+        <h1>حامد</h1>
       </Link>
     </div>
     <Search />
