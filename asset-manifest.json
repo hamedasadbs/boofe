@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.8bdddb76.chunk.css",
-    "main.js": "/static/js/main.fa40e16a.chunk.js",
-    "main.js.map": "/static/js/main.fa40e16a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f006afd8.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f006afd8.js.map",
-    "static/js/2.7b431f3d.chunk.js": "/static/js/2.7b431f3d.chunk.js",
-    "static/js/2.7b431f3d.chunk.js.map": "/static/js/2.7b431f3d.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.8bdddb76.chunk.css.map": "/static/css/main.8bdddb76.chunk.css.map",
-    "static/js/2.7b431f3d.chunk.js.LICENSE.txt": "/static/js/2.7b431f3d.chunk.js.LICENSE.txt",
-    "static/media/index.module.scss": "/static/media/BNazanin.5e9461d6.ttf",
-    "static/media/hamed.78fc7e58.png": "/static/media/hamed.78fc7e58.png",
-    "static/media/header.module.scss": "/static/media/header_background_image.e3ddd7ee.png",
-    "static/media/map.8f9f3125.png": "/static/media/map.8f9f3125.png",
-    "static/media/notFound.dbf2647e.png": "/static/media/notFound.dbf2647e.png",
-    "static/media/ramin.539122d7.png": "/static/media/ramin.539122d7.png"
+    "main.css": "/boofe/static/css/main.82faa272.chunk.css",
+    "main.js": "/boofe/static/js/main.fa40e16a.chunk.js",
+    "main.js.map": "/boofe/static/js/main.fa40e16a.chunk.js.map",
+    "runtime-main.js": "/boofe/static/js/runtime-main.022d6945.js",
+    "runtime-main.js.map": "/boofe/static/js/runtime-main.022d6945.js.map",
+    "static/js/2.7b431f3d.chunk.js": "/boofe/static/js/2.7b431f3d.chunk.js",
+    "static/js/2.7b431f3d.chunk.js.map": "/boofe/static/js/2.7b431f3d.chunk.js.map",
+    "index.html": "/boofe/index.html",
+    "static/css/main.82faa272.chunk.css.map": "/boofe/static/css/main.82faa272.chunk.css.map",
+    "static/js/2.7b431f3d.chunk.js.LICENSE.txt": "/boofe/static/js/2.7b431f3d.chunk.js.LICENSE.txt",
+    "static/media/index.module.scss": "/boofe/static/media/BNazanin.5e9461d6.ttf",
+    "static/media/hamed.78fc7e58.png": "/boofe/static/media/hamed.78fc7e58.png",
+    "static/media/header.module.scss": "/boofe/static/media/header_background_image.e3ddd7ee.png",
+    "static/media/map.8f9f3125.png": "/boofe/static/media/map.8f9f3125.png",
+    "static/media/notFound.dbf2647e.png": "/boofe/static/media/notFound.dbf2647e.png",
+    "static/media/ramin.539122d7.png": "/boofe/static/media/ramin.539122d7.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.f006afd8.js",
+    "static/js/runtime-main.022d6945.js",
     "static/js/2.7b431f3d.chunk.js",
-    "static/css/main.8bdddb76.chunk.css",
+    "static/css/main.82faa272.chunk.css",
     "static/js/main.fa40e16a.chunk.js"
   ]
 }
