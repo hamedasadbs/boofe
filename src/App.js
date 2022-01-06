@@ -77,6 +77,7 @@ export const App = () => {
             <Redirect to="/home" />
           </Route>
           <Route path="/">
+            <SignHeader />
             <NotFound />
           </Route>
         </Switch>
