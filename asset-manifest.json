@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/boofe/static/css/main.82faa272.chunk.css",
-    "main.js": "/boofe/static/js/main.a88a84d8.chunk.js",
-    "main.js.map": "/boofe/static/js/main.a88a84d8.chunk.js.map",
+    "main.js": "/boofe/static/js/main.a015e825.chunk.js",
+    "main.js.map": "/boofe/static/js/main.a015e825.chunk.js.map",
     "runtime-main.js": "/boofe/static/js/runtime-main.022d6945.js",
     "runtime-main.js.map": "/boofe/static/js/runtime-main.022d6945.js.map",
     "static/js/2.45b4e016.chunk.js": "/boofe/static/js/2.45b4e016.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.022d6945.js",
     "static/js/2.45b4e016.chunk.js",
     "static/css/main.82faa272.chunk.css",
-    "static/js/main.a88a84d8.chunk.js"
+    "static/js/main.a015e825.chunk.js"
   ]
 }
