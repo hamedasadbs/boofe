@@ -73,7 +73,7 @@ export const App = () => {
             <AdminTab activeTab={adminActiveTabHandler} />
             <AdminSection activeTab={adminActiveTab} />
           </Route>
-          <Route exact path="/">
+          <Route exact path="/boofe/">
             <Redirect to="/home" />
           </Route>
           <Route path="/">
