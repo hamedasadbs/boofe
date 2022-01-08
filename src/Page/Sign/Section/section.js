@@ -5,6 +5,13 @@ import { Redirect } from "react-router-dom";
 import style from "./section.module.scss";
 
 export const SignSection = (props) => {
+  const setCookie = (cName, cValue, minutes) => {
+    let d = new Date();
+    d.setTime(d.getTime() + minutes * 60 * 1000);
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cName + "=" + cValue + "; " + expires;
+  };
+
   const validatePassword = (pass) => {
     if (pass.length > 5) {
       return true;
@@ -50,7 +57,20 @@ export const SignSection = (props) => {
                   })
                 )
                 .then((res) => {
-                  alert(res.data);
+                  switch (res.data) {
+                    case 3:
+                      alert(res.data);
+                      window.location.href = "/sign";
+                      break;
+                    case 2:
+                      alert("این ایمیل قبلا ثبت نام شده است");
+                      break;
+                    case 1:
+                      alert(
+                        "این نام کاربری معتبر نیست لطفا نام کاربری دیگری انتخاب کنید"
+                      );
+                      break;
+                  }
                 });
             } else alert("رمز انتخابی شما قابل قبول نیست");
           } else alert("پسورد خود را به دقت وارد کنید");
@@ -76,8 +96,8 @@ export const SignSection = (props) => {
         )
         .then((res) => {
           if (res.data != "") {
-            props.token(res.data);
-            window.location.href = "/home";
+            setCookie("username", res.data, 100);
+            window.location.href = "/";
           } else alert("ایمیل/شماره تلفن یا رمز عبور اشتباه است");
         });
     } else alert("لطفا تمام اطلاعات خود را تکمیل کنید");

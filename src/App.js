@@ -31,7 +31,6 @@ import { Footer } from "./Page/Footer/footer";
 export const App = () => {
   const [signActiveTab, setSignActiveTab] = useState("login");
   const [adminActiveTab, setAdminActiveTab] = useState("add");
-  const [token, setToken] = useState("حساب کاربری");
 
   const signActiveTabHandler = (at) => {
     setSignActiveTab(at);
@@ -41,10 +40,6 @@ export const App = () => {
     setAdminActiveTab(at);
   };
 
-  const tokenHandler = (tk) => {
-    alert(tk);
-    setToken(tk);
-  };
   return (
     <div>
       <Router>
@@ -52,7 +47,7 @@ export const App = () => {
           <Route path="/sign">
             <SignHeader />
             <SignTab activeTab={signActiveTabHandler} />
-            <SignSection activeTab={signActiveTab} token={tokenHandler} />
+            <SignSection activeTab={signActiveTab} />
             <Footer />
           </Route>
           <Route path="/restaurants">
@@ -61,7 +56,7 @@ export const App = () => {
             <Footer />
           </Route>
           <Route path="/home">
-            <HomeHeader token={token} />
+            <HomeHeader />
             <Dropdown />
             <HomeSection />
             <QAs />
@@ -73,7 +68,7 @@ export const App = () => {
             <AdminTab activeTab={adminActiveTabHandler} />
             <AdminSection activeTab={adminActiveTab} />
           </Route>
-          <Route exact path="/boofe/">
+          <Route exact path="/">
             <Redirect to="/home" />
           </Route>
           <Route path="/">
