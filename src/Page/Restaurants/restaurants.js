@@ -26,6 +26,8 @@ export const Restaurants = () => {
             title={res.title}
             index={index}
             key={index}
+            info1={res.info1}
+            info2={res.info2}
           />
         ))}
       </main>

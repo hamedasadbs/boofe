@@ -49,9 +49,27 @@ export const AdminSection = (props) => {
     }
   };
 
-  useEffect(() => {
+  const updateRestaurants = () => {
     axios.get(url).then((res) => setTotalRestaurants(res.data));
+  };
+
+  useEffect(() => {
+    updateRestaurants();
   }, []);
+
+  const filterHandler = (e) => {
+    let removeFilter = e.target.value;
+    if (removeFilter != "") {
+      setTotalRestaurants([]);
+      totalRestaurants.map((res) => {
+        if (res.title.indexOf(removeFilter) > -1) {
+          setTotalRestaurants((totalRestaurants) => [...totalRestaurants, res]);
+        }
+      });
+    } else {
+      updateRestaurants();
+    }
+  };
 
   return (
     <section className={style.section}>
@@ -116,7 +134,10 @@ export const AdminSection = (props) => {
           <h1>حذف رستوران</h1>
           <main>
             <div>
-              <input placeholder="فیلتر بر اساس نام رستوران" />
+              <input
+                onChange={filterHandler}
+                placeholder="فیلتر بر اساس نام رستوران"
+              />
               <i className="fa fa-filter"></i>
             </div>
           </main>
@@ -130,6 +151,8 @@ export const AdminSection = (props) => {
                 points={res.point}
                 address={res.address}
                 title={res.title}
+                info1={res.info1}
+                info2={res.info2}
                 update={updateHandler}
                 delete
               />
@@ -141,7 +164,10 @@ export const AdminSection = (props) => {
           <h1>ویرایش رستوران</h1>
           <main>
             <div>
-              <input placeholder="فیلتر بر اساس نام رستوران" />
+              <input
+                onChange={filterHandler}
+                placeholder="فیلتر بر اساس نام رستوران"
+              />
               <i className="fa fa-filter"></i>
             </div>
           </main>
@@ -155,6 +181,8 @@ export const AdminSection = (props) => {
                 points={res.point}
                 address={res.address}
                 title={res.title}
+                info1={res.info1}
+                info2={res.info2}
                 update={updateHandler}
                 edit
               />

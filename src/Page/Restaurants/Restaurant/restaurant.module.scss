@@ -83,20 +83,20 @@
         font-weight: bold;
     }
 
-    .adds {
+    .info {
         margin: 10px auto;
         display: flex;
 
-        .firstAdd {
+        .firstInfo {
             background-color: $mainOrange;
         }
 
-        .secondAdd {
+        .secondInfo {
             background-color: $mainGreen;
         }
 
-        .firstAdd,
-        .secondAdd {
+        .firstInfo,
+        .secondInfo {
             text-align: center;
             padding: 5px 40px;
             font-size: 17px;
@@ -148,10 +148,10 @@
 
 @media only screen and (max-width: 400px) {
     .bigRestaurant {
-        .adds {
+        .info {
             flex-direction: column;
 
-            .secondAdd {
+            .secondInfo {
                 margin-top: 5px;
             }
         }
@@ -160,7 +160,7 @@
     .restaurant {
         width: 97%;
 
-        .adds {
+        .info {
             flex-direction: column;
         }
     }

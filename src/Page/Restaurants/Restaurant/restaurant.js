@@ -17,9 +17,9 @@ export const Restaurant = (props) => (
           <div className={style.point}>{props.points}</div>
         </div>
         <h2>{props.address}</h2>
-        <div className={style.adds}>
-          <div className={style.firstAdd}>شش ماه ضمانت</div>
-          <div className={style.secondAdd}>صددرصد طبیعی</div>
+        <div className={style.info}>
+          <div className={style.firstInfo}>{props.info2}</div>
+          <div className={style.secondInfo}>{props.info1}</div>
         </div>
       </section>
     ) : (
@@ -36,8 +36,8 @@ export const Restaurant = (props) => (
           <div className={style.point}>{props.points}</div>
         </div>
         <h2>{props.address}</h2>
-        <div className={style.adds}>
-          <div className={style.firstAdd}>شش ماه ضمانت</div>
+        <div className={style.info}>
+          <div className={style.firstInfo}>{props.info2}</div>
         </div>
       </section>
     )}

@@ -60,15 +60,27 @@ export const App = () => {
       <Router>
         <Switch>
           <Route path="/sign">
-            <SignHeader />
-            <SignTab activeTab={signActiveTabHandler} />
-            <SignSection activeTab={signActiveTab} />
-            <Footer />
+            {getCookie("role") ? (
+              <Redirect to="/admin" />
+            ) : (
+              <>
+                <SignHeader />
+                <SignTab activeTab={signActiveTabHandler} />
+                <SignSection activeTab={signActiveTab} />
+                <Footer />
+              </>
+            )}
           </Route>
           <Route path="/restaurants">
-            <RestaurantHeader />
-            <Restaurants />
-            <Footer />
+            {getCookie("role") ? (
+              <Redirect to="/admin" />
+            ) : (
+              <>
+                <RestaurantHeader />
+                <Restaurants />
+                <Footer />
+              </>
+            )}
           </Route>
           <Route path="/home">
             {getCookie("role") ? (

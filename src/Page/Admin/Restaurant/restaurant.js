@@ -35,11 +35,21 @@ export const AdminRestaurant = (props) => {
     let id = props.id;
     let title = document.getElementById("title").value;
     let address = document.getElementById("address").value;
+    let info1 = document.getElementById("info1").value;
+    let info2 = document.getElementById("info2").value;
 
-    if (title === "" && address !== "") title = props.title;
-    if (title !== "" && address === "") address = props.address;
+    if (title === "") title = props.title;
+    if (address === "") address = props.address;
+    if (info1 === "") info1 = props.info1;
+    if (info2 === "") info2 = props.info2;
 
-    if (title === "" && address === "") editHandler();
+    if (
+      title === props.title &&
+      address === props.address &&
+      info1 === props.info1 &&
+      info2 === props.info2
+    )
+      editHandler();
     else {
       axios
         .post(
@@ -48,6 +58,8 @@ export const AdminRestaurant = (props) => {
             id,
             title,
             address,
+            info1,
+            info2,
             goal: "update",
           })
         )
@@ -80,6 +92,12 @@ export const AdminRestaurant = (props) => {
             <h2>
               <textarea id="address" placeholder={props.address}></textarea>
             </h2>
+            <span>
+              <input id="info1" placeholder={props.info1} />
+            </span>
+            <span>
+              <input id="info2" placeholder={props.info2} />
+            </span>
             {props.delete && (
               <button className={style.delete} onClick={deleteHandler}>
                 حذف
@@ -109,6 +127,8 @@ export const AdminRestaurant = (props) => {
               <div className={style.point}>{props.points}</div>
             </div>
             <h2>{props.address}</h2>
+            <span>{props.info1}</span>
+            <span>{props.info2}</span>
             {props.delete && (
               <button className={style.delete} onClick={deleteHandler}>
                 حذف

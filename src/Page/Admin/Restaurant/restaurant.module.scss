@@ -1,7 +1,6 @@
 @import '../../../index.module.scss';
 
 .restaurant {
-    height: 400px;
     width: 290px;
     background-color: white;
     margin: 10px 5px;
@@ -102,6 +101,14 @@
         font-size: 15px;
         font-family: specialFont;
         color: $link;
+        font-weight: bold;
+    }
+
+    span {
+        margin: 0 auto;
+        font-size: 18px;
+        font-family: specialFont;
+        color: $title;
         font-weight: bold;
     }
 
