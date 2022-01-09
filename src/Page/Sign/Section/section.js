@@ -96,8 +96,10 @@ export const SignSection = (props) => {
         )
         .then((res) => {
           if (res.data != "") {
-            setCookie("username", res.data, 100);
-            window.location.href = "/";
+            setCookie("username", res.data[0], 100);
+            setCookie("role", res.data[1], 100);
+            if (res.data[1] == "0") window.location.href = "/";
+            else window.location.href = "/admin";
           } else alert("ایمیل/شماره تلفن یا رمز عبور اشتباه است");
         });
     } else alert("لطفا تمام اطلاعات خود را تکمیل کنید");

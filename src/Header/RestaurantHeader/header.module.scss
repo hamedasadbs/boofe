@@ -21,7 +21,7 @@
 
         .account {
             display: flex;
-            margin-right: 10%;
+            margin-right: 5%;
             padding: 5px 0;
 
             h1 {
@@ -36,6 +36,10 @@
                 margin-left: 10px;
                 color: white;
             }
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         .logo {
@@ -47,8 +51,8 @@
 
             a {
                 img {
-                    width: 40px;
-                    height: 40px;
+                    width: 45px;
+                    height: 45px;
                     margin: auto;
                 }
             }
@@ -56,10 +60,14 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 650px) {
     .header {
         main {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+
+            .account {
+                margin-right: 10%;
+            }
 
             .logo {
                 margin-left: 10%;

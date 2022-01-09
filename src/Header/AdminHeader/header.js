@@ -5,10 +5,8 @@ import { useEffect, useState } from "react";
 import style from "./header.module.scss";
 /*ASSETS*/
 import logo from "../../Images/logo.png";
-/*CHILD-COMPONENTS*/
-import { Search } from "../Search/search";
 
-export const HomeHeader = () => {
+export const AdminHeader = () => {
   const [username, setUsername] = useState("");
 
   const getCookie = (cName) => {
@@ -45,28 +43,25 @@ export const HomeHeader = () => {
       setCookie("username", "", -100);
       setCookie("role", "", -100);
       checkStation();
+      window.location.href = "/";
     }
   };
   return (
-    <div id="home" className={style.header}>
+    <div className={style.header}>
+      <div className={style.logo}>
+        <img src={logo} alt="logo" />
+      </div>
       {username ? (
         <div className={style.account} onClick={logoutHandler}>
           <h1>{username}</h1>
-          <i className="fa fa-user"></i>
+          <i className="fa fa-user-plus"></i>
         </div>
       ) : (
         <Link className={style.account} to="/sign">
-          <h1>حساب کاربری</h1>
-          <i className="fa fa-user"></i>
+          <h1></h1>
+          <i className="fa fa-user-plus"></i>
         </Link>
       )}
-      <div className={style.logo}>
-        <Link to="/home">
-          <img src={logo} alt="logo" />
-          <h1>بوفه</h1>
-        </Link>
-      </div>
-      <Search />
     </div>
   );
 };

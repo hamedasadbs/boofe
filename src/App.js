@@ -21,6 +21,7 @@ import { SignSection } from "./Page/Sign/Section/section";
 import { RestaurantHeader } from "./Header/RestaurantHeader/header";
 import { Restaurants } from "./Page/Restaurants/restaurants";
 /*->Admin PAGE<-*/
+import { AdminHeader } from "./Header/AdminHeader/header";
 import { AdminTab } from "./Page/Admin/Tab/tab";
 import { AdminSection } from "./Page/Admin/Section/section";
 /*->404 PAGE<-*/
@@ -40,6 +41,20 @@ export const App = () => {
     setAdminActiveTab(at);
   };
 
+  const getCookie = (cName) => {
+    const nameString = cName + "=";
+
+    const value = document.cookie.split("; ").filter((item) => {
+      return item.includes(nameString);
+    });
+
+    if (value.length) {
+      return value[0].substring(nameString.length, value[0].length);
+    } else {
+      return "";
+    }
+  };
+
   return (
     <div>
       <Router>
@@ -56,17 +71,29 @@ export const App = () => {
             <Footer />
           </Route>
           <Route path="/home">
-            <HomeHeader />
-            <Dropdown />
-            <HomeSection />
-            <QAs />
-            <PublicOpinion />
-            <Footer />
+            {getCookie("role") ? (
+              <Redirect to="/admin" />
+            ) : (
+              <>
+                <HomeHeader />
+                <Dropdown />
+                <HomeSection />
+                <QAs />
+                <PublicOpinion />
+                <Footer />
+              </>
+            )}
           </Route>
           <Route path="/admin">
-            <SignHeader />
-            <AdminTab activeTab={adminActiveTabHandler} />
-            <AdminSection activeTab={adminActiveTab} />
+            {getCookie("role") ? (
+              <>
+                <AdminHeader />
+                <AdminTab activeTab={adminActiveTabHandler} />
+                <AdminSection activeTab={adminActiveTab} />{" "}
+              </>
+            ) : (
+              <Redirect to="/home" />
+            )}
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />
