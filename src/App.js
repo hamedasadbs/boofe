@@ -59,7 +59,7 @@ export const App = () => {
     <div>
       <Router basename="/">
         <Switch>
-          <Route exact to="/boofe/sign">
+          <Route exact to="boofe/sign">
             {getCookie("role") == "0" ? (
               <Redirect to="/boofe/admin" />
             ) : (
@@ -71,7 +71,7 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route to="/boofe/restaurant">
+          <Route to="boofe/restaurant">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
@@ -82,7 +82,7 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route to='/boofe/home'>
+          <Route to='boofe/home'>
             {getCookie("role") == "1" ? (
               <Redirect to="/boofe/admin" />
             ) : (
@@ -96,7 +96,7 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route path="/boofe/admin">
+          <Route path="boofe/admin">
             {getCookie("role") == "1" ? (
               <>
                 <AdminHeader />
@@ -104,11 +104,11 @@ export const App = () => {
                 <AdminSection activeTab={adminActiveTab} />{" "}
               </>
             ) : (
-              <Redirect to="/boofe/home" />
+              <Redirect to="boofe/home" />
             )}
           </Route>
           <Route exact path="/">
-            <Redirect to="/boofe/home" />
+            <Redirect to="boofe/home" />
           </Route>
           <Route path="/">
             <SignHeader />
