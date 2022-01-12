@@ -109,7 +109,7 @@ export const App = () => {
             )}
           </Route>
           <Route exact path="/">
-            <Redirect to="/home" />
+            <Redirect to="/sign" />
           </Route>
           <Route path="/">
             <SignHeader />
