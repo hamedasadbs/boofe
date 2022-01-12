@@ -57,7 +57,7 @@ export const App = () => {
 
   return (
     <div>
-      <Router>
+      <Router basename="/">
         <Switch>
           <Route to="/sign">
             {getCookie("role") == "1" ? (
@@ -71,7 +71,7 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route exact to="http://hamedasadbs.github.io/boofe/restaurant">
+          <Route to="/restaurant">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
