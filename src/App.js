@@ -82,7 +82,7 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route path="/home">
+          <Route path="https://hamedasadbs.github.io/boofe/">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
