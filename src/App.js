@@ -57,7 +57,7 @@ export const App = () => {
 
   return (
     <div>
-      <Router basename="/">
+      <Router basename="http://hamedasadbs.github.io/boofe">
         <Switch>
           <Route to="/sign">
             {getCookie("role") == "1" ? (
