@@ -60,7 +60,7 @@ export const App = () => {
     <div>
       <Router>
         <Switch>
-          <BrowserRouter basename="http://hamedasadbs.github.io/boofe/sign/">
+          <BrowserRouter basename="/sign">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
@@ -72,7 +72,7 @@ export const App = () => {
               </>
             )}
           </BrowserRouter>
-          <BrowserRouter basename="http://hamedasadbs.github.io/boofe/restaurants/">
+          <BrowserRouter basename="/restaurants">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
@@ -83,7 +83,7 @@ export const App = () => {
               </>
             )}
           </BrowserRouter>
-          <BrowserRouter basename='http://hamedasadbs.github.io/boofe/home/'>
+          <BrowserRouter basename='/home'>
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
