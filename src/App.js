@@ -59,7 +59,7 @@ export const App = () => {
     <div>
       <Router basename="/">
         <Switch>
-          <Route to="/boofe/sign">
+          <Route exact to="/boofe/sign">
             {getCookie("role") == "1" ? (
               <Redirect to="/boofe/admin" />
             ) : (
