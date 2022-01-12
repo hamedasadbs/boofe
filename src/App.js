@@ -3,8 +3,7 @@ import { useState } from "react";
 import {
   Switch,
   Route,
-  Route as Router,
-  Route,
+  BrowserRouter as Router,
   Redirect,
 } from "react-router-dom";
 /*CHILD-COMPONENTS*/
