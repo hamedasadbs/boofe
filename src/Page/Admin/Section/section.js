@@ -15,7 +15,14 @@ export const AdminSection = (props) => {
   };
 
   const updateHandler = () => {
-    axios.get(url).then((res) => setTotalRestaurants(res.data));
+    axios
+      .post(
+        url,
+        JSON.stringify({
+          goal: "get",
+        })
+      )
+      .then((res) => setTotalRestaurants(res.data));
   };
 
   const addHandler = () => {
@@ -24,9 +31,14 @@ export const AdminSection = (props) => {
     let star = document.getElementById("star").value;
     let point = document.getElementById("point").value;
     let image = document.getElementById("image").value;
+    let info1 = document.getElementById("info1").value;
+    let info2 = document.getElementById("info2").value;
 
     if (title === "" || address === "")
       alert("لطفا تمامی اطلاعات رستوران را وارد کنید");
+    else if (image === "") alert("لطفا تصویر رستوران را انتخاب کنید");
+    else if (info1 === "" && info2 === "")
+      alert("حداقل یک مورد از اطلاعات رستوران را وارد کنید");
     else {
       if (window.confirm("آیا از ایجاد این رستوران مطمئن هستید؟")) {
         axios
@@ -37,7 +49,9 @@ export const AdminSection = (props) => {
               address,
               star,
               point,
-              image,
+              info1,
+              info2,
+              image: image.split(/(\\|\/)/g).pop(),
               goal: "add",
             })
           )
@@ -50,7 +64,14 @@ export const AdminSection = (props) => {
   };
 
   const updateRestaurants = () => {
-    axios.get(url).then((res) => setTotalRestaurants(res.data));
+    axios
+      .post(
+        url,
+        JSON.stringify({
+          goal: "get",
+        })
+      )
+      .then((res) => setTotalRestaurants(res.data));
   };
 
   useEffect(() => {
@@ -86,6 +107,14 @@ export const AdminSection = (props) => {
               <i className="fa fa-map"></i>
             </div>
             <div>
+              <input id="info1" placeholder="(بخش اول) اطلاعات رستوران" />
+              <i className="fa fa-info-circle"></i>
+            </div>
+            <div>
+              <input id="info2" placeholder="(بخش دوم) اطلاعات رستوران" />
+              <i className="fa fa-info-circle"></i>
+            </div>
+            <div>
               <select id="star">
                 <option selected value="5">
                   5
@@ -115,18 +144,22 @@ export const AdminSection = (props) => {
               </label>
               <i className="fa fa-money"></i>
             </div>
-            <div>
-              <form
-                action="restaurant.php"
-                method="post"
-                enctype="multipart/form-data"
-              >
-                <input type="file" id="image" />
-              </form>
-              <label>تصویر</label>
-              <i className="fa fa-picture-o"></i>
-            </div>
-            <button onClick={addHandler}>افزودن</button>
+            <iframe name="dummyframe"></iframe>
+            <form
+              action="http://localhost/boofe/uploadImage.php"
+              method="post"
+              enctype="multipart/form-data"
+              target="dummyframe"
+            >
+              <div>
+                <input type="file" name="file" id="image" />
+                <label>تصویر</label>
+                <i className="fa fa-picture-o"></i>
+              </div>
+              <button name="submit" onClick={addHandler}>
+                افزودن
+              </button>
+            </form>
           </main>
         </div>
       ) : props.activeTab === "remove" ? (

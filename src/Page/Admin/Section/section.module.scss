@@ -22,25 +22,6 @@
             margin: 10px auto;
             width: 60%;
 
-            button {
-                color: white;
-                width: 90%;
-                margin: 10px auto;
-                transition: all 0.5s;
-                border: none;
-                padding: 5px;
-                border-radius: 50px;
-                font-family: myFont;
-                font-weight: bold;
-                font-size: 22px;
-                transition: all 0.3s;
-                background-color: darken($mainGreen, 10%);
-
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-
             div {
                 background-color: white;
                 margin: 10px auto;
@@ -137,6 +118,35 @@
                         height: 25px;
                         background-color: darken($mainGreen, 10%);
                         cursor: pointer;
+                    }
+                }
+            }
+
+            iframe {
+                display: none;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+
+                button {
+                    color: white;
+                    width: 90%;
+                    margin: 10px auto;
+                    transition: all 0.5s;
+                    border: none;
+                    padding: 5px;
+                    border-radius: 50px;
+                    font-family: myFont;
+                    font-weight: bold;
+                    font-size: 22px;
+                    transition: all 0.3s;
+                    background-color: darken($mainGreen, 10%);
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: darken($mainOrange, 10%);
                     }
                 }
             }
