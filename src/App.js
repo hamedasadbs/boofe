@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   BrowserRouter as Router,
+  BrowserRouter,
   Redirect,
 } from "react-router-dom";
 /*CHILD-COMPONENTS*/
@@ -82,7 +83,7 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route path="/">
+          <BrowserRouter basename='http://hamedasadbs.github.io/boofe'>
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
@@ -95,7 +96,7 @@ export const App = () => {
                 <Footer />
               </>
             )}
-          </Route>
+          </BrowserRouter>
           <Route path="/admin">
             {getCookie("role") == "1" ? (
               <>
