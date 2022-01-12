@@ -71,7 +71,7 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route exact to="/restaurants">
+          <Route exact to="http://hamedasadbs.github.io/boofe/restaurant">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
