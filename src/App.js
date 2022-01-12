@@ -3,8 +3,8 @@ import { useState } from "react";
 import {
   Switch,
   Route,
-  BrowserRouter as Router,
-  BrowserRouter,
+  Route as Router,
+  Route,
   Redirect,
 } from "react-router-dom";
 /*CHILD-COMPONENTS*/
@@ -60,7 +60,7 @@ export const App = () => {
     <div>
       <Router>
         <Switch>
-          <BrowserRouter basename="/sign">
+          <Route to="/sign">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
@@ -71,8 +71,8 @@ export const App = () => {
                 <Footer />
               </>
             )}
-          </BrowserRouter>
-          <BrowserRouter basename="/restaurants">
+          </Route>
+          <Route to="/restaurants">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
@@ -82,8 +82,8 @@ export const App = () => {
                 <Footer />
               </>
             )}
-          </BrowserRouter>
-          <BrowserRouter basename='/home'>
+          </Route>
+          <Route to='/home'>
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
@@ -96,7 +96,7 @@ export const App = () => {
                 <Footer />
               </>
             )}
-          </BrowserRouter>
+          </Route>
           <Route path="/admin">
             {getCookie("role") == "1" ? (
               <>
