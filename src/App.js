@@ -71,7 +71,7 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route to="/restaurants">
+          <Route exact to="/restaurants">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
@@ -108,7 +108,7 @@ export const App = () => {
             )}
           </Route>
           <Route exact path="/">
-            <Redirect to="/sign" />
+            <Redirect to="/home" />
           </Route>
           <Route path="/">
             <SignHeader />
