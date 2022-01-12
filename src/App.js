@@ -60,7 +60,7 @@ export const App = () => {
       <Router basename="/">
         <Switch>
           <Route exact to="/boofe/sign">
-            {getCookie("role") == "1" ? (
+            {getCookie("role") == "0" ? (
               <Redirect to="/boofe/admin" />
             ) : (
               <>
