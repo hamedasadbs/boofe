@@ -72,7 +72,7 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route path="/restaurants">
+          <BrowserRouter basename="http://hamedasadbs.github.io/boofe/restaurants">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
@@ -82,8 +82,8 @@ export const App = () => {
                 <Footer />
               </>
             )}
-          </Route>
-          <BrowserRouter basename='http://hamedasadbs.github.io/boofe'>
+          </BrowserRouter>
+          <BrowserRouter basename='http://hamedasadbs.github.io/boofe/home'>
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
