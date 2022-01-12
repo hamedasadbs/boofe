@@ -3,6 +3,7 @@ import { useState } from "react";
 import {
   Switch,
   Route,
+  BrowserRouter as Router,
   Redirect,
 } from "react-router-dom";
 /*CHILD-COMPONENTS*/
@@ -56,63 +57,65 @@ export const App = () => {
 
   return (
     <div>
-      <Switch>
-        <Route exact path="/sign">
-          {getCookie("role") == "0" ? (
-            <Redirect path="/admin" />
-          ) : (
-            <>
-              <SignHeader />
-              <SignTab activeTab={signActiveTabHandler} />
-              <SignSection activeTab={signActiveTab} />
-              <Footer />
-            </>
-          )}
-        </Route>
-        <Route path="/restaurant">
-          {getCookie("role") == "1" ? (
-            <Redirect path="/admin" />
-          ) : (
-            <>
-              <RestaurantHeader />
-              <Restaurants />
-              <Footer />
-            </>
-          )}
-        </Route>
-        <Route path="/home">
-          {getCookie("role") == "1" ? (
-            <Redirect path="/admin" />
-          ) : (
-            <>
-              <HomeHeader />
-              <Dropdown />
-              <HomeSection />
-              <QAs />
-              <PublicOpinion />
-              <Footer />
-            </>
-          )}
-        </Route>
-        <Route path="/admin">
-          {getCookie("role") == "1" ? (
-            <>
-              <AdminHeader />
-              <AdminTab activeTab={adminActiveTabHandler} />
-              <AdminSection activeTab={adminActiveTab} />{" "}
-            </>
-          ) : (
+      <Router>
+        <Switch>
+          <Route exact path="/sign">
+            {getCookie("role") == "0" ? (
+              <Redirect path="/admin" />
+            ) : (
+              <>
+                <SignHeader />
+                <SignTab activeTab={signActiveTabHandler} />
+                <SignSection activeTab={signActiveTab} />
+                <Footer />
+              </>
+            )}
+          </Route>
+          <Route path="/restaurant">
+            {getCookie("role") == "1" ? (
+              <Redirect path="/admin" />
+            ) : (
+              <>
+                <RestaurantHeader />
+                <Restaurants />
+                <Footer />
+              </>
+            )}
+          </Route>
+          <Route path='/home'>
+            {getCookie("role") == "1" ? (
+              <Redirect path="/admin" />
+            ) : (
+              <>
+                <HomeHeader />
+                <Dropdown />
+                <HomeSection />
+                <QAs />
+                <PublicOpinion />
+                <Footer />
+              </>
+            )}
+          </Route>
+          <Route path="/admin">
+            {getCookie("role") == "1" ? (
+              <>
+                <AdminHeader />
+                <AdminTab activeTab={adminActiveTabHandler} />
+                <AdminSection activeTab={adminActiveTab} />{" "}
+              </>
+            ) : (
+              <Redirect path="/home" />
+            )}
+          </Route>
+          <Route exact path="/">
             <Redirect path="/home" />
-          )}
-        </Route>
-        <Route exact path="/">
-          <Redirect path="/home" />
-        </Route>
-        <Route path="/">
-          <SignHeader />
-          <NotFound />
-        </Route>
-      </Switch>
+          </Route>
+          <Route path="/">
+            <SignHeader />
+            <NotFound />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 };
