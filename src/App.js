@@ -59,20 +59,19 @@ export const App = () => {
     <div>
       <Router basename="/">
         <Switch>
-          <Route to="/sign">
+          <Route to="/boofe/sign">
             {getCookie("role") == "1" ? (
-              <Redirect to="/admin" />
+              <Redirect to="/boofe/admin" />
             ) : (
               <>
                 <SignHeader />
                 <SignTab activeTab={signActiveTabHandler} />
                 <SignSection activeTab={signActiveTab} />
-                <a href="/sdfsd/tryrty">sdfd</a>
                 <Footer />
               </>
             )}
           </Route>
-          <Route to="/restaurant">
+          <Route to="/boofe/restaurant">
             {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
@@ -83,9 +82,9 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route to='/home'>
+          <Route to='/boofe/home'>
             {getCookie("role") == "1" ? (
-              <Redirect to="/admin" />
+              <Redirect to="/boofe/admin" />
             ) : (
               <>
                 <HomeHeader />
@@ -97,7 +96,7 @@ export const App = () => {
               </>
             )}
           </Route>
-          <Route path="/admin">
+          <Route path="/boofe/admin">
             {getCookie("role") == "1" ? (
               <>
                 <AdminHeader />
@@ -105,11 +104,11 @@ export const App = () => {
                 <AdminSection activeTab={adminActiveTab} />{" "}
               </>
             ) : (
-              <Redirect to="/home" />
+              <Redirect to="/boofe/home" />
             )}
           </Route>
           <Route exact path="/">
-            <Redirect to="/home" />
+            <Redirect to="/boofe/home" />
           </Route>
           <Route path="/">
             <SignHeader />
