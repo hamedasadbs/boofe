@@ -57,7 +57,6 @@ export const App = () => {
 
   return (
     <div>
-      <a href="/sdfsd/tryrty">sdfd</a>
       <Router basename="/">
         <Switch>
           <Route to="/sign">
@@ -68,6 +67,7 @@ export const App = () => {
                 <SignHeader />
                 <SignTab activeTab={signActiveTabHandler} />
                 <SignSection activeTab={signActiveTab} />
+                <a href="/sdfsd/tryrty">sdfd</a>
                 <Footer />
               </>
             )}
