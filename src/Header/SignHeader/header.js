@@ -6,7 +6,7 @@ import logo from "../../Images/logo.png";
 export const SignHeader = () => (
   <div className={style.header}>
     <div className={style.logo}>
-      <a href="/">
+      <a href="/boofe/">
         <img src={logo} alt="logo" />
       </a>
     </div>
