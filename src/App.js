@@ -60,7 +60,7 @@ export const App = () => {
       <Router>
         <Switch>
           <Route path="/sign">
-            {getCookie("role") ? (
+            {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
               <>
@@ -72,7 +72,7 @@ export const App = () => {
             )}
           </Route>
           <Route path="/restaurants">
-            {getCookie("role") ? (
+            {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
               <>
@@ -83,7 +83,7 @@ export const App = () => {
             )}
           </Route>
           <Route path="/home">
-            {getCookie("role") ? (
+            {getCookie("role") == "1" ? (
               <Redirect to="/admin" />
             ) : (
               <>
@@ -97,7 +97,7 @@ export const App = () => {
             )}
           </Route>
           <Route path="/admin">
-            {getCookie("role") ? (
+            {getCookie("role") == "1" ? (
               <>
                 <AdminHeader />
                 <AdminTab activeTab={adminActiveTabHandler} />
