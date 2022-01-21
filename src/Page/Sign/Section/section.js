@@ -59,7 +59,7 @@ export const SignSection = (props) => {
                 .then((res) => {
                   switch (res.data) {
                     case 3:
-                      alert(res.data);
+                      alert('حساب مورد نظر با موفقیت ایجاد شد');
                       window.location.href = "/sign";
                       break;
                     case 2:
